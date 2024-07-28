@@ -16,10 +16,26 @@ public class Main {
         final ImageIcon UCOLOGO = new ImageIcon(Main.class.getResource("uco.png"));
 
         ArrayList<Jugador> jugadores = new ArrayList<>();
+        LocalDateTime momentoSorteo;
+        String numGanador;
 
-        LocalDateTime momentoSorteo = FechaHoraDeJuego.obtenerFechaSorteo();
-        String numGanador = JOptionPane.showInputDialog("Ingresa el número que ganará: ");
-        System.out.println(Duration.between(momentoSorteo,LocalDateTime.now() ).toSeconds() > 0);
+        while (true) {
+            momentoSorteo = FechaHoraDeJuego.obtenerFechaSorteo();
+            if (Duration.between(LocalDateTime.now(), momentoSorteo).toSeconds() >= 360){
+                break;
+            } else {
+                JOptionPane.showMessageDialog(null, "Ingrese una fecha y hora correctas.");
+            }
+        }
+        while (true) {
+            numGanador = JOptionPane.showInputDialog("Ingresa el número que ganará: ");
+            if (numGanador.length()==4){
+                break;
+            } else {
+                JOptionPane.showMessageDialog(null, "Ingrese un número válido.");
+            }
+        }
+
 
         while(Duration.between(LocalDateTime.now(), momentoSorteo).toSeconds() > 0) {
             int ingresarJugador = JOptionPane.showOptionDialog(null, "Fecha y hora del sorteo: " + momentoSorteo.getYear() + "/" + momentoSorteo.getMonth() + "/" +  momentoSorteo.getDayOfMonth() + "  " +  momentoSorteo.getHour() + ":" +  momentoSorteo.getMinute() + ":" + momentoSorteo.getSecond(), "UCO Bet", 0 , 0, UCOLOGO, Arrays.asList("Ingresar jugador", "Estadísticas", "Cancelar Sorteo", "Sortear").toArray(),0);

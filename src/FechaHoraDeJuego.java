@@ -14,8 +14,10 @@ public class FechaHoraDeJuego {
 
                 dateTimeGame = LocalDateTime.parse(momentoDeSorteo, momentoDeSorteoFormat);
 
-                JOptionPane.showMessageDialog(null, dateTimeGame);
-                return dateTimeGame;
+                int confirmar = JOptionPane.showConfirmDialog(null, "Fecha y hora de sorteo:\n" + dateTimeGame);
+                if (confirmar == 0){
+                    return dateTimeGame;
+                }
 
             } catch (DateTimeParseException e) {
                 JOptionPane.showMessageDialog(null, "Formato de fecha y hora incorrecto, intente nuevamente.");
