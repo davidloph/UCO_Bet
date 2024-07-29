@@ -13,6 +13,7 @@ public class Main {
         final int INGRESAR_JUGADOR = 0;
         final int ESTADISTICAS = 1;
         final int SORTEAR = 3;
+        int numero;
         final ImageIcon UCOLOGO = new ImageIcon(Main.class.getResource("uco.png"));
 
         //Puro testeo de push papi
