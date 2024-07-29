@@ -13,13 +13,7 @@ public class Main {
         final int INGRESAR_JUGADOR = 0;
         final int ESTADISTICAS = 1;
         final int SORTEAR = 3;
-        final int PruebaYError= 666;
-        int numero;
         final ImageIcon UCOLOGO = new ImageIcon(Main.class.getResource("uco.png"));
-
-
-        //prubea de pull a ver si funciona JAJAJAJAJAJA
-
 
         ArrayList<Jugador> jugadores = new ArrayList<>();
         LocalDateTime momentoSorteo;
