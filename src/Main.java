@@ -18,6 +18,7 @@ public class Main {
         //Puro testeo de push papi
 
         ArrayList<Jugador> jugadores = new ArrayList<>();
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
         LocalDateTime momentoSorteo;
         String numGanador;
 
