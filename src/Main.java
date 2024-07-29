@@ -15,6 +15,8 @@ public class Main {
         final int SORTEAR = 3;
         final ImageIcon UCOLOGO = new ImageIcon(Main.class.getResource("uco.png"));
 
+        //Puro testeo de push papi
+
         ArrayList<Jugador> jugadores = new ArrayList<>();
         LocalDateTime momentoSorteo;
         String numGanador;
