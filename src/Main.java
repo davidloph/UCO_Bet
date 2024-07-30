@@ -32,7 +32,7 @@ public class Main {
         }
         while (true) {
             numGanador = JOptionPane.showInputDialog("Ingresa el número que ganará: ");
-            if (numGanador.length()==4){
+            if (numGanador.length()==4 && numGanador.matches("\\d+")){
                 break;
             } else {
                 JOptionPane.showMessageDialog(null, "Ingrese un número válido.");
@@ -50,10 +50,6 @@ public class Main {
 
            }else if (ingresarJugador == INGRESAR_JUGADOR && ValidacionParaJugar.validacion(momentoSorteo)) {
                 DatosJugador.datosJugador(jugadores);
-
-                jugadores.forEach(jugador -> {
-                    JOptionPane.showMessageDialog(null, jugador.toString());
-                });
             } else if (ingresarJugador == INGRESAR_JUGADOR && !ValidacionParaJugar.validacion(momentoSorteo)) {
                 JOptionPane.showMessageDialog(null, "Tiempo agotado...");
             } else if (ingresarJugador == 2 || ingresarJugador == -1) {

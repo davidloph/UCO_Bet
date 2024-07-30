@@ -25,7 +25,7 @@ public class DatosJugador {
             }
         }
         while (true) {
-            cedula = JOptionPane.showInputDialog("Cédula: ");
+            cedula = JOptionPane.showInputDialog("Documento: ");
             if (cedula == null || cedula.isBlank()) {
                 JOptionPane.showMessageDialog(null, "Ingrese un documento válido.");
             } else {
@@ -34,7 +34,7 @@ public class DatosJugador {
         }
         while (true) {
             celular = JOptionPane.showInputDialog("Celular: ");
-            if (celular == null || celular.isBlank()) {
+            if (celular == null || celular.isBlank() || !celular.matches("\\d+")) {
                 JOptionPane.showMessageDialog(null, "Ingrese un celular válido.");
             } else {
                 break;
@@ -42,7 +42,7 @@ public class DatosJugador {
         }
         while (true) {
             numSorteo = JOptionPane.showInputDialog("Sorteo: ");
-            if (numSorteo == null || numSorteo.isBlank() || numSorteo.length() > 4 || numSorteo.matches("\\d")) {
+            if (numSorteo == null || numSorteo.isBlank() || numSorteo.length() > 4 || !numSorteo.matches("\\d+")) {
                 JOptionPane.showMessageDialog(null, "Ingrese un numero válido.");
             } else {
                 break;
@@ -52,6 +52,7 @@ public class DatosJugador {
 
 
         Jugador jugador = new Jugador(nombre, email, cedula, celular, numSorteo);
+        JOptionPane.showMessageDialog(null, "Jugador guardado:\n\n" + jugador.toString());
         jugadores.add(jugador);
 
     }
