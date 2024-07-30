@@ -35,12 +35,10 @@ public class Jugador {
 
     @Override
     public String toString() {
-        return "Jugador{" +
-                "cedula='" + cedula + '\'' +
-                ", nombre='" + nombre + '\'' +
-                ", email='" + email + '\'' +
-                ", celular='" + celular + '\'' +
-                ", numSorteo='" + numSorteo + '\'' +
-                '}';
+        return "Nombre: " + nombre + '\n' +
+                "Documento: " + cedula + '\n' +
+                "Correo: " + email + '\n' +
+                "Celular: " + celular + '\n' +
+                "Sorteo: " + numSorteo;
     }
 }
